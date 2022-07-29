@@ -43,3 +43,7 @@ body {
 .match-creation select {
   padding: 32px 48px;
 }
+
+.clicked {
+  background-color: #b00b1e;
+}

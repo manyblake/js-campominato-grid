@@ -11,6 +11,7 @@ gameStart.addEventListener(`click`, function () {
     chessBox.className = `chess-box`;
     chessBox.innerHTML = i + 1;
     playground.appendChild(chessBox);
+    chessBox.addEventListener(`click`, getChessBox);
   }
 
   playground.style.gridTemplateColumns = `repeat(${selectedDifficulty}, 1fr)`;
@@ -18,3 +19,9 @@ gameStart.addEventListener(`click`, function () {
   gameStart.classList.add(`hidden`);
   difficultyCheck.classList.add(`hidden`);
 });
+
+function getChessBox() {
+  const chessBox = this;
+  chessBox.classList.toggle(`clicked`);
+  console.log(`Hai clickato la casella ${this.innerHTML}`);
+}
