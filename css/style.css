@@ -14,9 +14,12 @@ body {
   height: 100vh;
 }
 
+.hidden {
+  display: none;
+}
+
 .chessboard {
   display: grid;
-  grid-template-columns: repeat(8, 1fr);
 }
 
 .chess-box {
@@ -27,4 +30,16 @@ body {
   justify-content: center;
   border: 1px solid black;
   aspect-ratio: 1/1;
+}
+
+.match-creation {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.match-creation input,
+.match-creation select {
+  padding: 32px 48px;
 }

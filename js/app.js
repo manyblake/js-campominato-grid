@@ -1,8 +1,20 @@
 const playground = document.querySelector(`.chessboard`);
+const difficultyCheck = document.getElementById(`game-difficulty`);
+const gameStart = document.querySelector(`.button`);
 
-for (let i = 0; i < 64; i++) {
-  const chessBox = document.createElement("div");
-  chessBox.className = `chess-box`;
-  chessBox.innerHTML = i + 1;
-  playground.appendChild(chessBox);
-}
+gameStart.addEventListener(`click`, function () {
+  const selectedDifficulty = parseInt(difficultyCheck.value);
+  const numberOfChessBoxes = selectedDifficulty ** 2;
+
+  for (let i = 0; i < numberOfChessBoxes; i++) {
+    const chessBox = document.createElement(`div`);
+    chessBox.className = `chess-box`;
+    chessBox.innerHTML = i + 1;
+    playground.appendChild(chessBox);
+  }
+
+  playground.style.gridTemplateColumns = `repeat(${selectedDifficulty}, 1fr)`;
+  playground.classList.remove(`hidden`);
+  gameStart.classList.add(`hidden`);
+  difficultyCheck.classList.add(`hidden`);
+});
